@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<header>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/formulario.css" rel="stylesheet">
+  <script src="../script.js"></script>
+  <script src="../Banco.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="jquery-3.5.1.min.js"></script>
+  <title>Cadastro de questões</title>
+</header>
+
+<body>
+  <div class="b">
+    <div class="direita" id="ddireita">
+      <span class="direita" id="sdireita">Selecione um tipo de questão </span>
+    </div>
+    <div class="meio">
+      <div class="header">
+        <span class="textheader"> Formulário de cadastro de questões </span>
+      </div>
+      <div class="subtitulo">
+        <span class="subtitulo"> Tipo de questão </span>
+      </div>
+      <form class="tipo" id="tipo">
+        <div class="barra1">
+          <label id="associar"> <input type="radio" name="pickquestion" value="0" onclick="cor()"> Associar
+            colunas </label>
+          <label id="opf"> <input type="radio" name="pickquestion" value="1" onclick="cor()"> Ordenar palavras de uma
+            frase </label>
+          <label id="dpi"> <input type="radio" name="pickquestion" value="2" onclick="cor()"> Digitar palavra da
+            imagem </label>
+          <label id="dpv"> <input type="radio" name="pickquestion" value="3" onclick="cor()"> Digitar palavra do vídeo
+          </label>
+          <label id="dfv"> <input type="radio" name="pickquestion" value="4" onclick="cor()"> Digitar frase de um
+            vídeo em libras
+          </label>
+        </div>
+        <div class="barra2">
+          <label id="plfd"> <input type="radio" name="pickquestion" value="5" onclick="cor()"> Preencher lacuna da
+            frase digitando
+          </label>
+          <label id="plfa"> <input type="radio" name="pickquestion" value="6" onclick="cor()"> Preencher lacuna da
+            frase com
+            alternativa</label>
+          <label id="mapv"> <input type="radio" name="pickquestion" value="7" onclick="cor()"> Marcar alternativa da
+            palavra do vídeo
+          </label>
+          <label id="mapi"> <input type="radio" name="pickquestion" value="8" onclick="cor()"> Marcar alternativa da
+            palavra da
+            imagem </label>
+          <label id="maf"> <input type="radio" name="pickquestion" value="9" onclick="cor()"> Marcar alternativa da
+            frase </label>
+        </div>
+      </form>
+      <div class="embaixo" id="dembaixo">
+        <span class="embaixo" id="sembaixo"> Informações sobre a questão </span>
+      </div>
+      <div class="categoria" id="dcategoria">
+        <form action="" id="categoria">
+          <label for="categoria"></label>
+          <input type="text" name="categoria" list="categorias" placeholder="Categoria" class="categ" id="categ"><datalist
+            id="categorias">
+            <option value="Alimentos"></option>
+            <option value="Animais"></option>
+            <option value="Profissões"></option>
+          </datalist>
+        </form>
+      </div>
+      <div class="criarcategoria" id="dcriarcategoria">
+        <button type="button" class="criarcategoria"> <span class="criarcategoria"> Criar categoria </span>
+        </button>
+      </div>
+      <div class="associartexto" id="dassociartexto"><span class="associartexto">Tipo de associação</span></div>
+      <div class="associacao" id="dassociacao">
+        <form class="associacao" id="fassociacao">
+          <label id="associacao1"> <input type="radio" name="associacao" value="10" onclick="vip()"> Vídeo/imagem e
+            palavras </label>
+          <label id="associacao2"> <input type="radio" name="associacao" value="11" onclick="pfp()">
+            Palavras/frases e palavras </label>
+        </form>
+      </div>
+      <div class="pfp" id="dpfp">
+        <div class="coluna" id="dcoluna">
+          <form class="coluna" id="colunapfp">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+          </form>
+        </div>
+        <div class="associado" id="dassociado">
+          <form class="associado" id="associadopfp">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="associado1" placeholder="Associado da coluna 1">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="associado2" placeholder="Associado da coluna 1">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="associado3" placeholder="Associado da coluna 1">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="associado4" placeholder="Associado da coluna 1">
+          </form>
+        </div>
+      </div>
+      <div class="vip" id="dvip">
+        <div class="coluna" id="dcoluna">
+          <form class="coluna" id="colunavip">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+            <label for="coluna" class="coluna"></label><input type="text" name="coluna" class="coluna"
+              placeholder="Coluna 1">
+          </form>
+        </div>
+        <div class="associado" id="dassociado">
+          <form class="associado" id="associadovip">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="iassociado1" placeholder="URL da mídia">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="iassociado2" placeholder="URL da mídia">
+            <label for="associado" class="associado"></label><input type="text" name="associado" class="associado"
+              id="iassociado3" placeholder="URL da mídia">
+          </form>
+        </div>
+      </div>
+      <form class="opf" id="opf">
+        <div class="opffrase" id="dopffrase">
+          <label for="opffrase"></label><input type="text" name="opffrase" class="opffrase" id="opffrase"
+            placeholder="Insira aqui a frase">
+        </div>
+        <div class="opfmidia" id="dopfmidia">
+          <label for="opfmidia"> </label><input type="text" name="opfmidia" id="opfmidia" class="opfmidia" placeholder="URL da mídia">
+        </div>
+      </form>
+      <div class="opftexto" id="opftexto1">
+        <span class="opftexto" id="sopftexto1"> Uma imagem ou vídeo não é necessária, mas </span>
+      </div>
+      <div class="opftexto" id="opftexto2">
+        <span class="opftexto" id="sopftexto2"> O próprio app embaralha as palavras! </span>
+      </div>
+      <form class="dpi" id="dpi">
+        <div class="dpifrase" id="ddpifrase">
+          <label for="dpifrase"></label><input type="text" name="dpifrase" class="dpifrase" id="dpífrase"
+            placeholder="Palavra/frase correta">
+        </div>
+        <div class="dpimidia" id="ddpimidia">
+          <label for="dpimidia"> </label><input type="text" name="dpimidia" id="dpimidia" class="dpimidia" placeholder="URL da mídia">
+        </div>
+      </form>
+      <form class="plfd" id="plfd">
+        <div class="plfdfrase" id="dplfdfrase">
+          <label for="plfdfrase"></label><input type="text" name="plfdfrase" class="plfdfrase" id="plfdfrase"
+            placeholder="Frase completa">
+        </div>
+        <div class="plfdpalavra" id="dplfdpalavra">
+          <label for="plfdpalavra"></label><input type="text" name="plfdpalavra" class="plfdpalavra" id="plfdpalavra"
+            placeholder="Palavra faltando">
+        </div>
+      </form>
+      <form class="plfa" id="plfd">
+        <div class="plfamidia" id="dplfamidia">
+          <label for="plfamidia"> </label><input type="text" name="plfamidia" id="plfamidia" class="plfamidia" placeholder="URL da mídia">
+        </div>
+      </form>
+      <form class="mapv" id="mapv">
+        <div class="mapvmidia" id="dmapvmidia">
+          <label for="mapvmidia"> </label><input type="text" name="mapvmidia" id="mapvmidia" class="mapvmidia" placeholder="URL da mídia">
+        </div>
+      </form>
+      <div class="alternativas" id="dalternativas">
+        <div class="altitle">
+          <span class="altitle"> Alternativas </span>
+        </div>
+        <form class="alt" id="alt">
+          <div class="alts" onclick="">
+            <label for="altcerta"></label> <input type="text" name="altcerta" id="altcerta" class="altcerta"
+              placeholder="Alternativa correta">
+            <label for="alterrada"></label> <input type="text" name="alterrada" id="alterrada1" class="alterrada"
+              placeholder="Alternativa errada">
+            <label for="alterrada"></label> <input type="text" name="alterrada" id="alterrada2" class="alterrada"
+              placeholder="Alternativa errada">
+            <label for="alterrada"></label> <input type="text" name="alterrada" id="alterrada3" class="alterrada"
+              placeholder="Alternativa errada">
+            <label for="alterrada"></label> <input type="text" name="alterrada" id="alterrada4" class="alterrada"
+              placeholder="Alternativa errada">
+          </div>
+        </form>
+      </div>
+      <div class="submit" id="dsubmit"> 
+        <form class="submit" action="/" method="GET">
+          <label for="submit"></label> <input type="submit" class="btn" onclick="pegardados()">
+        </form>
+      </div>
+    </div>
+    <div class="esquerda" id="desquerda">
+      <span class="esquerda" id="sesquerda">Nosso aplicativo busca atender a todos os estudantes da comunidade Surda,
+        então temos
+        questões de todos os níveis de dificuldade! Para os níveis iniciais não são recomendadas questões com frases
+      </span>
+    </div>
+    <div class="diembaixo" id="ddiembaixo">
+      <span class="diembaixo" id="sdiembaixo"> Nenhuma categoria serve para sua questão? Crie uma categoria! </span>
+    </div>
+    <div class="esembaixo" id="desembaixo">
+      <span class="esembaixo" id="sesembaixo"> Preencha as informações da questão </span>
+    </div>
+  </div>
+</body>
+
+</html>

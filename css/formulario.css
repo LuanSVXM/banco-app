@@ -1,0 +1,403 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+div.b {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #219EBC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-family: Barlow;
+  font-style: normal;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+div.meio {
+  background-color: #ffffff;
+  height: 95%;
+  width: 40%;
+  margin: 7%;
+}
+
+div.header {
+  display: flex;
+  height: 10%;
+  background-color: #8ECAE6;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+span.textheader {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+div.subtitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5%;
+  width: 100%;
+}
+
+span.subtitulo {
+  margin-left: -55%;
+  font-size: 28px;
+}
+
+form.tipo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 80%;
+}
+label {
+  width: 100%;
+  height: 8%;
+  text-align: left;
+  font-family: Barlow;
+  font-size: 18px;
+}
+
+input {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type=radio]::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: solid 2px;
+  border-color: #FFB703;
+  vertical-align: bottom;
+}
+
+input[type=radio]:checked::after {
+  content: '';
+  background-color: rgba(52, 71, 245, 1);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  right: 2px;
+  top: 3px;
+}
+
+div.barra1,
+div.barra2 {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70%;
+  width: 40%;
+  margin-top: 2%;
+}
+
+div.barra1 {
+  margin-left: 3%;
+}
+
+div.barra2 {
+  margin-left: 8%;
+}
+
+div.direita,
+div.diembaixo,
+div.esquerda,
+div.esembaixo,
+div.opftexto {
+  display: inline-flex;
+  align-items: stretch;
+  width: 20%;
+  height: auto;
+  border-radius: 30px;
+  background-color: #8ECAE6;
+  color: #00537A;
+}
+
+span.direita {
+  font-weight: bold;
+}
+
+span.esquerda,
+span.esembaixo,
+span.direita,
+span.diembaixo,
+span.opftexto {
+  text-align: center;
+  font-size: 25px;
+  margin: 8%;
+}
+
+div.embaixo {
+  display: none;
+  position: absolute;
+  height: 20px;
+  bottom: 26%;
+  width: 50%;
+}
+
+span.embaixo {
+  margin-left: 3%;
+  font-size: 24px;
+  line-height: 10%;
+}
+
+div.diembaixo {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+}
+
+div.esembaixo {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+}
+
+span.diembaixo,
+span.esembaixo {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+span.esembaixo {
+  font-weight: bold;
+}
+
+div.categoria {
+  display: none;
+  position: absolute;
+  bottom: 20%;
+  left: 36.2%;
+}
+
+input.categ {
+  width: 45%;
+}
+
+div.criarcategoria {
+  display: none;
+  position: absolute;
+  bottom: 15.6%;
+  left: 35.9%;
+}
+
+button.criarcategoria {
+  width: auto;
+}
+
+span.criarcategoria {
+  font-size: 16px;
+}
+
+div.associartexto {
+  display: none;
+  position: absolute;
+  bottom: 8%;
+  left: 35.4%;
+  border-style: solid;
+  border-width: 1px;
+  padding: 3px;
+}
+
+span.associartexto {
+  text-align: center;
+}
+
+div.associacao {
+  position: absolute;
+  bottom: 6.5%;
+  left: 46%;
+}
+
+form.associacao {
+  display: none;
+  flex-wrap: wrap;
+}
+
+div.opffrase,
+div.dpifrase {
+  display: none;
+  position: absolute;
+  bottom: 9%;
+  left: 33%;
+}
+
+::placeholder {
+  text-align: center;
+  color: #000000;
+}
+
+div.opfmidia,
+div.dpimidia {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 33%;
+}
+
+div.opftexto {
+  display: none;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  width: 12%;
+  padding: 0.6%;
+  border-radius: 20px;
+  align-items: unset;
+}
+
+span.opftexto {
+  text-align: center;
+  font-size: 16px;
+}
+
+#opftexto2 {
+  position: absolute;
+  bottom: 5%;
+  left: 55%;
+}
+
+div.plfdpalavra {
+  display: none;
+  position: absolute;
+  bottom: 3.5%;
+  left: 33%;
+}
+
+div.plfdfrase {
+  display: none;
+  position: absolute;
+  bottom: 7.5%;
+  left: 33%;
+}
+
+div.plfamidia {
+  display: none;
+  position: absolute;
+  bottom: 11.5%;
+  left: 33%;
+}
+
+div.mapvmidia {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  left: 33%;
+}
+
+div.alternativas {
+  display: none;
+}
+
+div.altitle {
+  position: absolute;
+  bottom: 23%;
+  left: 56%;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+}
+
+div.alts {
+  position: absolute;
+  bottom: 11%;
+  right: 25%;
+  width: 25%;
+}
+
+input.altcerta,
+input.alterrada {
+  width: 30.7%;
+  background: #FF3C3C 90%;
+  border-color: #000000;
+}
+
+input.altcerta {
+  background: #7BFF65;
+}
+
+#alterrada4 {
+  margin-top: 0.7%;
+  left: 16%;
+}
+
+input[type=text] {
+  cursor: text;
+}
+
+div.vip,
+div.pfp {
+  display: none;
+  position: absolute;
+  bottom: 25%;
+  width: 20%;
+  right: 30.5%;
+}
+
+div.coluna {
+  position: absolute;
+  left: 0%;
+}
+
+div.associado {
+  position: absolute;
+  left: 38%;
+}
+
+form.coluna,
+form.associado {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label.coluna,
+label.associado {
+  height: 8px;
+}
+
+input.associado {
+  width: 90%;
+}
+
+input.coluna {
+  width: 33%;
+}
+
+div.vip {
+  position: absolute;
+  bottom: 21.8%;
+}
+
+
+#iassociado1,
+#iassociado2,
+#iassociado3 {
+  width: 70%;
+}
+
+div.submit {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+}
